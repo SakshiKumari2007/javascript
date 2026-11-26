@@ -1,0 +1,61 @@
+import java.util.Sanner;
+class Student {
+    String usn;
+    String name;
+    String branch;
+    String phone;
+
+    // Constructor
+    Student(String usn, String name, String branch, String phone) {
+        this.usn = usn;
+        this.name = name;
+        this.branch = branch;
+        this.phone = phone;
+    }
+
+    // Display method
+    void display() {
+        System.out.println(usn + "\t" + name + "\t" + branch + "\t" + phone);
+    }
+}
+
+public class StudentDemo {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of students: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+
+        Student[] s = new Student[n];
+
+        for (int i = 0; i < n; i++) {
+
+            System.out.println("\nEnter details of Student " + (i + 1));
+
+            System.out.print("USN: ");
+            String usn = sc.nextLine();
+
+            System.out.print("Name: ");
+            String name = sc.nextLine();
+
+            System.out.print("Branch: ");
+            String branch = sc.nextLine();
+
+            System.out.print("Phone: ");
+            String phone = sc.nextLine();
+
+            s[i] = new Student(usn, name, branch, phone);
+        }
+
+        System.out.println("\nStudent Details:");
+        System.out.println("USN\tName\tBranch\tPhone");
+
+        for (int i = 0; i < n; i++) {
+            s[i].display();
+        }
+
+        sc.close();
+    }
+}
